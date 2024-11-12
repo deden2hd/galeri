@@ -46,17 +46,17 @@ if(!isset($_SESSION['user_id'])){
     while($data=mysqli_fetch_array($sql)){
         ?>
         <tr>
-            <td><?=$data['fotoid']?></td>
-            <td><?=$data['judulfoto']?></td>
-            <td><?=$data['deskripsifoto']?></td>
+            <td><?=$data['foto_id']?></td>
+            <td><?=$data['foto_judul']?></td>
+            <td><?=$data['foto_deskripsi']?></td>
             <td>
-                <img src="gambar/<?=$data['lokasifile']?>" width="200px">
+                <img src="gambar/<?=$data['path_file']?>" width="200px">
             </td>
-            <td><?=$data['namalengkap']?></td>
+            <td><?=$data['nama_lengkap']?></td>
             <td>
                 <?php
                 $foto_id=$data['foto_id'];
-                $sql2=mysqli_query($conn,"select * from likefoto where foto_id='$foto_id'");
+                $sql2=mysqli_query($conn,"select * from like_foto where foto_id='$foto_id'");
                 echo mysqli_num_rows($sql2);
                 ?>
             </td>
